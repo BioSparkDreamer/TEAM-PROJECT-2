@@ -21,54 +21,69 @@ public class GuideMovement : MonoBehaviour
     void Start()
     {
         moveSpeed = defaultMoveSpeed;
+        CheckWaypoint();
+        
     }
 
     void Update()
     {
         if (startMovement == true)
-        {
-            //...............................................Check if waypoint reached
+        {            
             if (gameObject.transform.position == waypoint[waypointIndex].transform.position)
             {
-                //Set next waypoint in array as new target,
-                //check if it has a waypointadjuster script
-                waypointIndex = waypointIndex + 1;
-                GameObject waypointScriptCheck = waypoint[waypointIndex].gameObject;
-                waypointScriptCheck.GetComponent<WaypointAdjuster>();
-
-                //If it does, grab its values to change how
-                //the guide moves
-                if (waypointScriptCheck != null)
+                //...............................................Turn off movement at end
+                if (waypointIndex == waypoint.Length)
                 {
-                    
+                    waypointIndex = 0;
+                    startMovement = false;
                 }
+
+                //...............................................Check if waypoint reached
                 else
                 {
-                    moveSpeed = defaultMoveSpeed;
-                    waitTime = 0f;
+                    //Set next waypoint in array as new target
+                    waypointIndex = waypointIndex + 1;
+                    //check if it has a WaypointAdjuster script
+                    CheckWaypoint();
                 }
+            }   
+            MoveToWaypoint();
+        }
+    }
 
-                //start moving toward next waypoint
-                MoveToWaypoint();
-            }
-            else
-            {
-                MoveToWaypoint();
-            }
-            
+    void CheckWaypoint()
+    {
+        //check if waypoint has a WaypointAdjuster script
+        GameObject waypointScriptCheck = waypoint[waypointIndex].gameObject;
+        waypointAdjuster = waypointScriptCheck.GetComponent<WaypointAdjuster>();
+
+        //If it does, grab its values to change how
+        //the guide will move
+        if (waypointScriptCheck != null)
+        {
+            moveSpeed = waypointAdjuster.aproachSpeed;
+            waitTime = waypointAdjuster.waitThenCome;
+        }
+        else
+        {
+            moveSpeed = defaultMoveSpeed;
+            waitTime = 0f;
         }
     }
 
     void MoveToWaypoint()
     {
-        //...............................................Pause movement
-        if (waitTime < 0f)
+        //Pause movement if there is a wait time
+        if (waitTime > 0f)
         {
             waitTime = waitTime - Time.deltaTime;
             return;
         }
-
-        //...............................................Move toward waypoint
-        transform.position = Vector3.MoveTowards(transform.position, waypoint[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
+        else
+        {
+            //Move toward waypoint
+            transform.position = Vector3.MoveTowards(transform.position, waypoint[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
+        }
     }
+
 }

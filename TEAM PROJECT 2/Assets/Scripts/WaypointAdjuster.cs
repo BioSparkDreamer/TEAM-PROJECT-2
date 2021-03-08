@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class WaypointAdjuster : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float aproachSpeed = 5;
+    public float waitThenCome = 0;
 }
