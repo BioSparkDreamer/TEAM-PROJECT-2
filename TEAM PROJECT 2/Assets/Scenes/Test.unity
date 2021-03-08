@@ -545,7 +545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cefb1b208963304e9f3937901d86922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aproachSpeed: 0
+  aproachSpeed: 50
   waitThenCome: 0
 --- !u!1 &605523114
 GameObject:
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   - {fileID: 23727642}
   - {fileID: 598542168}
   defaultMoveSpeed: 5
-  startMovement: 0
+  startMovement: 1
 --- !u!1 &2068990097
 GameObject:
   m_ObjectHideFlags: 0

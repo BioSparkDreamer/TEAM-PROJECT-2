@@ -2,6 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// ================= TO USE: ===================
+// While "startMovement" is true, this script will run. It will turn it off
+// at the end. In the unity inspector, you can set any number of waypoints that
+// you want the object this script is attached to to move towards, in order.
+// If you attach the "WaypointAdjuster" script to those objects, you can modify
+// how this object will move towards them individually.
+
+
 public class GuideMovement : MonoBehaviour
 {
     //.............................................Waypoint Variables
@@ -20,32 +29,35 @@ public class GuideMovement : MonoBehaviour
     
     void Start()
     {
+        //.............................................Instantiation
         moveSpeed = defaultMoveSpeed;
+        //checks first waypoint in array for a
+        //script, adds its modifications if applicable
         CheckWaypoint();
         
     }
 
     void Update()
     {
+        //.............................................Turn on movement
         if (startMovement == true)
-        {            
+        {    
+            //check if current destination reached
             if (gameObject.transform.position == waypoint[waypointIndex].transform.position)
             {
-                //...............................................Turn off movement at end
-                if (waypointIndex == waypoint.Length)
+                //.............................................Set next waypoint in array as new target
+                if (waypointIndex < waypoint.Length - 1)
                 {
-                    waypointIndex = 0;
-                    startMovement = false;
-                }
-
-                //...............................................Check if waypoint reached
-                else
-                {
-                    //Set next waypoint in array as new target
                     waypointIndex = waypointIndex + 1;
                     //check if it has a WaypointAdjuster script
                     CheckWaypoint();
                 }
+                //...............................................Turn off movement at end of array
+                else
+                {
+                    waypointIndex = 0;
+                    startMovement = false;
+                }                
             }   
             MoveToWaypoint();
         }
