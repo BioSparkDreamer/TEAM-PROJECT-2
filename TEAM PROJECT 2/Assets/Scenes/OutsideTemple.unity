@@ -1345,6 +1345,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4659872809399133588, guid: edfddf421b4c8d1428141b9235af5bda,
+        type: 3}
+      propertyPath: runes
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4659872809399133589, guid: edfddf421b4c8d1428141b9235af5bda,
         type: 3}
       propertyPath: m_Name
