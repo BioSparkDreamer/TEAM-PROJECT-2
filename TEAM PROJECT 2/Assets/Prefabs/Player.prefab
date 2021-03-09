@@ -41,9 +41,10 @@ GameObject:
   - component: {fileID: 4659872809399133590}
   - component: {fileID: 4659872809399133591}
   - component: {fileID: 4659872809399133588}
+  - component: {fileID: -1173827366321474941}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,6 +105,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   jumpStrength: 3
+--- !u!114 &-1173827366321474941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4659872809399133589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53332841a7e496c4bac64261addd39a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runes: 0
 --- !u!1 &4659872810109913072
 GameObject:
   m_ObjectHideFlags: 0

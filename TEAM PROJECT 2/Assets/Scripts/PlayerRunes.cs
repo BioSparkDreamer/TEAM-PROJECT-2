@@ -21,4 +21,8 @@ public class PlayerRunes : MonoBehaviour
             SceneManager.LoadScene(1);
         }
     }
+    public void ChangeRunes()
+        {
+	        runes++; 
+        }
 }
