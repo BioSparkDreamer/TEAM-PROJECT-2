@@ -234,13 +234,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 265549158}
   moveSpeed: 10
-  gravity: -9.81
+  gravity: -25
   groundCheck: {fileID: 1300713422}
   groundCheckDistance: 0.4
   groundMask:
     serializedVersion: 2
     m_Bits: 256
-  jumpStrength: 3
+  jumpStrength: 2
 --- !u!114 &265549161
 MonoBehaviour:
   m_ObjectHideFlags: 0
