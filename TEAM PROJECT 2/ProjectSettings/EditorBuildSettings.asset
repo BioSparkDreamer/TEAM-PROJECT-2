@@ -6,9 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/OutsideTemple.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/MainMenu.unity
+    guid: d225e32d26c2fa644920b04d0e4b1a2d
+  - enabled: 1
+    path: Assets/Scenes/About.unity
+    guid: 51173a2efb11c814c907198599b10052
   - enabled: 1
     path: Assets/Scenes/InsideTemple.unity
     guid: 271730332a191f14b8ea0cbb3d41afbe
+  - enabled: 1
+    path: Assets/Scenes/OutsideTemple.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 9336511aeb7c4a848a4112baa8a4b4bf
+  - enabled: 1
+    path: Assets/Scenes/Pause.unity
+    guid: 752f3455599b5f94c9e63c04e82bba8a
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: bf63bad7e221c9d4ea6b74456b6935ea
   m_configObjects: {}
