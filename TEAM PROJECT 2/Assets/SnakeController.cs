@@ -10,6 +10,11 @@ public class SnakeController : MonoBehaviour
     public float patrolSpeed = 5f;
     public float rotateSpeed = 2f;
 
+    public float startChaseRange = 10f;
+    public float maxChaseRange = 40f;
+    public float chaseSpeed = 8f;
+    private bool chasingPlayer = false;
+
 
     private Vector3 startLocation;
     private Vector3 forwardPatrolLocation;
@@ -18,11 +23,17 @@ public class SnakeController : MonoBehaviour
     private bool moveTowardForwardPatrol = true;
     private Vector3 patrolLocationCheck;
 
+    private Transform playerObjectTransform;
+
     
     void Start()
     {
         //..............................................Instantiate
         snakeRigidBody = GetComponent<Rigidbody>();
+
+        //finds the player script by looking for a "PlayerRunes" tag
+        GameObject playerObject = GameObject.FindWithTag("PlayerRunes");
+        playerObjectTransform = playerObject.GetComponent<Transform>();
 
         //..............................................Find start and patrol positions
         startLocation = transform.position;
@@ -35,7 +46,18 @@ public class SnakeController : MonoBehaviour
     
     void Update()
     {
-        //..............................................Rotation/Movement
+        //..............................................Check Player Location
+        if (Vector3.Distance(playerObjectTransform.position, transform.position) < startChaseRange && chasingPlayer == false)
+        {
+            chasingPlayer = true;
+        }
+
+        if (Vector3.Distance(playerObjectTransform.position, startLocation) > maxChaseRange && chasingPlayer == true)
+        {
+            chasingPlayer = false;
+        }
+
+        //..............................................Check Patrol Points
         if (moveTowardForwardPatrol == true)
         {
             //check position
@@ -44,9 +66,7 @@ public class SnakeController : MonoBehaviour
             if(Vector3.Distance(patrolLocationCheck, transform.position) < 1)
             {
                 moveTowardForwardPatrol = false;
-            }
-
-            RotateTowardsLocation(forwardPatrolLocation);
+            }  
         }
         if (moveTowardForwardPatrol == false)
         {
@@ -57,11 +77,31 @@ public class SnakeController : MonoBehaviour
             {
                 moveTowardForwardPatrol = true;
             }
+        }
+    }
 
-            RotateTowardsLocation(backwardPatrolLocation);
+    private void FixedUpdate()
+    {
+        if (chasingPlayer == true)
+        {
+            RotateTowardsLocation(playerObjectTransform.position);
+            MoveForward(chaseSpeed);
         }
 
-        MoveForward();
+        else
+        {
+            if (moveTowardForwardPatrol == true)
+            {
+                RotateTowardsLocation(forwardPatrolLocation);
+                MoveForward(patrolSpeed);
+            }
+
+            else
+            {
+                RotateTowardsLocation(backwardPatrolLocation);
+                MoveForward(patrolSpeed);
+            }
+        }
     }
 
     void RotateTowardsLocation(Vector3 patrolLocation)
@@ -83,11 +123,11 @@ public class SnakeController : MonoBehaviour
     }
 
 
-    void  MoveForward()
+    void  MoveForward(float speed)
     {
         Vector3 currentSnakePosition = snakeRigidBody.position;
 
-        Vector3 forwardLocation = currentSnakePosition + transform.forward * patrolSpeed * Time.deltaTime;
+        Vector3 forwardLocation = currentSnakePosition + transform.forward * speed * Time.deltaTime;
         snakeRigidBody.MovePosition(forwardLocation);
     }
 }
