@@ -24,6 +24,9 @@ public class GuideMovement : MonoBehaviour
     //.............................................Movement Variables
     public float defaultMoveSpeed = 5f;
     public bool startMovement = false;
+
+    //.............................................Animation
+    Animator anim;
     
     
     
@@ -34,14 +37,18 @@ public class GuideMovement : MonoBehaviour
         //checks first waypoint in array for a
         //script, adds its modifications if applicable
         CheckWaypoint();
-        
+
+        anim = GetComponent<Animator>();
+
     }
 
     void Update()
     {
         //.............................................Turn on movement
         if (startMovement == true)
-        {    
+        {
+            anim.SetInteger("State", 1);
+
             //check if current destination reached
             if (gameObject.transform.position == waypoint[waypointIndex].transform.position)
             {
@@ -57,6 +64,7 @@ public class GuideMovement : MonoBehaviour
                 {
                     waypointIndex = 0;
                     startMovement = false;
+                    anim.SetInteger("State", 0);
                 }                
             }   
             MoveToWaypoint();
