@@ -7,6 +7,7 @@ TagManager:
   - Temple
   - Cube
   - PlayerRunes
+  - BAD Tile
   layers:
   - Default
   - TransparentFX
