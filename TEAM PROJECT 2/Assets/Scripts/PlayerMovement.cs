@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 // =================NOTE=====================
 // The ground checker only looks at objects tagged
@@ -12,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //..............................................Variables
     public CharacterController controller;
+    int count = 0;
 
     public float moveSpeed = 10f;
 
@@ -25,6 +28,14 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpStrength = 3f;
 
+    //..............................................Health Bar Configuration
+    public Image fullHealth;
+    public Image halfHealth;
+
+    public AudioSource barkAudio;
+    public AudioSource jumpAudio;
+    public AudioSource walkAudio;
+
     void Update()
     {
         //..............................................Ground check/Fall velocity reset
@@ -37,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
         //..............................................Get input
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        FootstepAudioCheck(x, z);
+
 
         //..............................................Move player
         //creates a location to move to relative to 
@@ -49,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
             fallVelocity.y = Mathf.Sqrt(jumpStrength * -2f * gravity);
+            jumpAudio.Play();
         }
 
         //..............................................Player fall velocity
@@ -56,5 +70,60 @@ public class PlayerMovement : MonoBehaviour
         //because that's just how physics works man
         fallVelocity.y = fallVelocity.y + gravity * Time.deltaTime;
         controller.Move(fallVelocity * Time.deltaTime);
+
+    }
+
+    //..............................................Snake Damage
+    private void OnTriggerEnter(Collider other)
+    {
+        
+        if(other.gameObject.CompareTag("Snake"))
+        {
+            Destroy(fullHealth);
+
+            if(count == 1)
+            {
+                Destroy(halfHealth);
+            }
+            
+            count = 1;
+        }
+    }
+    void FootstepAudioCheck(float x, float z)
+    {
+        if (isGrounded == true)
+        {
+            float absx = Mathf.Abs(x);
+            float absz = Mathf.Abs(z);
+
+            if (absx > 0 || absz > 0)
+            {
+                PlayWalkAudio();
+            }
+            else
+            {
+                StopWalkAudio();
+            }
+        }
+        else if (isGrounded == false)
+        {
+            StopWalkAudio();
+        }
+    }
+
+    void PlayWalkAudio()
+    {
+        if (walkAudio.isPlaying == false)
+        {
+            walkAudio.Play();
+        }
+    }
+
+    void StopWalkAudio()
+    {
+        if (walkAudio.isPlaying == true)
+        {
+            walkAudio.Stop();
+        }
     }
 }

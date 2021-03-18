@@ -47,8 +47,6 @@ public class GuideMovement : MonoBehaviour
         //.............................................Turn on movement
         if (startMovement == true)
         {
-            anim.SetInteger("State", 1);
-
             //check if current destination reached
             if (gameObject.transform.position == waypoint[waypointIndex].transform.position)
             {
@@ -64,9 +62,8 @@ public class GuideMovement : MonoBehaviour
                 {
                     waypointIndex = 0;
                     startMovement = false;
-                    anim.SetInteger("State", 0);
-                }                
-            }   
+                }
+            }
             MoveToWaypoint();
         }
     }
