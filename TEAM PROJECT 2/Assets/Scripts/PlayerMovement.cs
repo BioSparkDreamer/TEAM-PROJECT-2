@@ -25,6 +25,10 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpStrength = 3f;
 
+    public AudioSource walkAudio;
+    public AudioSource jumpAudio;
+    public AudioSource barkAudio;
+
     void Update()
     {
         //..............................................Ground check/Fall velocity reset
@@ -37,18 +41,20 @@ public class PlayerMovement : MonoBehaviour
         //..............................................Get input
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        FootstepAudioCheck(x, z);
 
         //..............................................Move player
         //creates a location to move to relative to 
         //direction player is facing
         Vector3 newLocation = transform.right * x + transform.forward * z;
 
-        controller.Move(newLocation * moveSpeed * Time.deltaTime);
+        controller.Move(newLocation * moveSpeed * Time.deltaTime); 
 
         //..............................................Jump
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
             fallVelocity.y = Mathf.Sqrt(jumpStrength * -2f * gravity);
+            jumpAudio.Play();
         }
 
         //..............................................Player fall velocity
@@ -56,5 +62,43 @@ public class PlayerMovement : MonoBehaviour
         //because that's just how physics works man
         fallVelocity.y = fallVelocity.y + gravity * Time.deltaTime;
         controller.Move(fallVelocity * Time.deltaTime);
+    }
+
+     void FootstepAudioCheck(float x, float z)
+    {
+        if (isGrounded == true)
+        {
+            float absx = Mathf.Abs(x);
+            float absz = Mathf.Abs(z);
+
+            if (absx > 0 || absz > 0)
+            {
+                PlayWalkAudio();
+            }
+            else
+            {
+                StopWalkAudio();
+            }
+        }
+        else if (isGrounded == false)
+        {
+            StopWalkAudio();
+        }
+    }
+
+    void PlayWalkAudio()
+    {
+        if (walkAudio.isPlaying == false)
+        {
+            walkAudio.Play();
+        }
+    }
+
+    void StopWalkAudio()
+    {
+        if (walkAudio.isPlaying == true)
+        {
+            walkAudio.Stop();
+        }
     }
 }

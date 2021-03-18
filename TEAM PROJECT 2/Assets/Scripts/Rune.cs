@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Rune : MonoBehaviour
 {
@@ -10,8 +11,9 @@ public class Rune : MonoBehaviour
         PlayerRunes controller = other.GetComponent<PlayerRunes>();
 		if (controller != null)
         {
-			Destroy(gameObject);
+            Destroy(gameObject);
             controller.ChangeRunes();
+            controller.PlayAudioForRunes();
         }
-	}
+    }
 }

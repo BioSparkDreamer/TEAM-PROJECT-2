@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,6 +25,8 @@ public class SnakeController : MonoBehaviour
     private Vector3 patrolLocationCheck;
 
     private Transform playerObjectTransform;
+
+    public AudioSource hissHiss;
 
     
     void Start()
@@ -77,6 +80,30 @@ public class SnakeController : MonoBehaviour
             {
                 moveTowardForwardPatrol = true;
             }
+        }
+        if (chasingPlayer == true)
+        {
+            PlayHissAudio();
+        }
+        else if (chasingPlayer == false)
+        {
+            StopHissAudio();
+        }
+    }
+
+    private void StopHissAudio()
+    {
+        if(hissHiss.isPlaying == true)
+        {
+            hissHiss.Stop();
+        }
+    }
+
+    private void PlayHissAudio()
+    {
+        if(hissHiss.isPlaying == false)
+        {
+            hissHiss.Play();
         }
     }
 
