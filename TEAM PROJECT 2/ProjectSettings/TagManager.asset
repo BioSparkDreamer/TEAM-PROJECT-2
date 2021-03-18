@@ -8,6 +8,10 @@ TagManager:
   - Cube
   - PlayerRunes
   - BAD Tile
+  - Snake
+  - Full Health
+  - Half Health
+  - Pause Menu
   layers:
   - Default
   - TransparentFX

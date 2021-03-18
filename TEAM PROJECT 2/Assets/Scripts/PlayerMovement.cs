@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 // =================NOTE=====================
 // The ground checker only looks at objects tagged
@@ -12,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //..............................................Variables
     public CharacterController controller;
+    int count = 0;
 
     public float moveSpeed = 10f;
 
@@ -24,6 +27,11 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
 
     public float jumpStrength = 3f;
+
+    //..............................................Health Bar Configuration
+    public Image fullHealth;
+    public Image halfHealth;
+   
 
     void Update()
     {
@@ -56,5 +64,23 @@ public class PlayerMovement : MonoBehaviour
         //because that's just how physics works man
         fallVelocity.y = fallVelocity.y + gravity * Time.deltaTime;
         controller.Move(fallVelocity * Time.deltaTime);
+
+    }
+
+    //..............................................Snake Damage
+    private void OnTriggerEnter(Collider other)
+    {
+        
+        if(other.gameObject.CompareTag("Snake"))
+        {
+            Destroy(fullHealth);
+
+            if(count == 1)
+            {
+                Destroy(halfHealth);
+            }
+            
+            count = 1;
+        }
     }
 }
