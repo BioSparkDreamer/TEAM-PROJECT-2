@@ -31,7 +31,10 @@ public class PlayerMovement : MonoBehaviour
     //..............................................Health Bar Configuration
     public Image fullHealth;
     public Image halfHealth;
-   
+
+    public AudioSource barkAudio;
+    public AudioSource jumpAudio;
+    public AudioSource walkAudio;
 
     void Update()
     {
@@ -45,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
         //..............................................Get input
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        FootstepAudioCheck(x, z);
+
 
         //..............................................Move player
         //creates a location to move to relative to 
@@ -57,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
             fallVelocity.y = Mathf.Sqrt(jumpStrength * -2f * gravity);
+            jumpAudio.Play();
         }
 
         //..............................................Player fall velocity
@@ -81,6 +87,43 @@ public class PlayerMovement : MonoBehaviour
             }
             
             count = 1;
+        }
+    }
+    void FootstepAudioCheck(float x, float z)
+    {
+        if (isGrounded == true)
+        {
+            float absx = Mathf.Abs(x);
+            float absz = Mathf.Abs(z);
+
+            if (absx > 0 || absz > 0)
+            {
+                PlayWalkAudio();
+            }
+            else
+            {
+                StopWalkAudio();
+            }
+        }
+        else if (isGrounded == false)
+        {
+            StopWalkAudio();
+        }
+    }
+
+    void PlayWalkAudio()
+    {
+        if (walkAudio.isPlaying == false)
+        {
+            walkAudio.Play();
+        }
+    }
+
+    void StopWalkAudio()
+    {
+        if (walkAudio.isPlaying == true)
+        {
+            walkAudio.Stop();
         }
     }
 }

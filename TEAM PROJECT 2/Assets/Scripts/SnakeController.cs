@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,7 +26,9 @@ public class SnakeController : MonoBehaviour
 
     private Transform playerObjectTransform;
 
-    
+    public AudioSource hissHiss;
+
+
     void Start()
     {
         //..............................................Instantiate
@@ -43,7 +46,7 @@ public class SnakeController : MonoBehaviour
         backwardPatrolLocation = transform.TransformPoint(Vector3.forward * -patrolRadius);
     }
 
-    
+
     void Update()
     {
         //..............................................Check Player Location
@@ -63,10 +66,10 @@ public class SnakeController : MonoBehaviour
             //check position
             patrolLocationCheck = forwardPatrolLocation;
             patrolLocationCheck.y = transform.position.y;
-            if(Vector3.Distance(patrolLocationCheck, transform.position) < 1)
+            if (Vector3.Distance(patrolLocationCheck, transform.position) < 1)
             {
                 moveTowardForwardPatrol = false;
-            }  
+            }
         }
         if (moveTowardForwardPatrol == false)
         {
@@ -77,6 +80,30 @@ public class SnakeController : MonoBehaviour
             {
                 moveTowardForwardPatrol = true;
             }
+        }
+        if (chasingPlayer == true)
+        {
+            PlayHissAudio();
+        }
+        else if (chasingPlayer == false)
+        {
+            StopHissAudio();
+        }
+    }
+
+    private void StopHissAudio()
+    {
+        if (hissHiss.isPlaying == true)
+        {
+            hissHiss.Stop();
+        }
+    }
+
+    private void PlayHissAudio()
+    {
+        if (hissHiss.isPlaying == false)
+        {
+            hissHiss.Play();
         }
     }
 
@@ -123,7 +150,7 @@ public class SnakeController : MonoBehaviour
     }
 
 
-    void  MoveForward(float speed)
+    void MoveForward(float speed)
     {
         Vector3 currentSnakePosition = snakeRigidBody.position;
 
