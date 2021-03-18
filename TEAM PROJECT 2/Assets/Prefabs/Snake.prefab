@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 788720249776467713}
   - component: {fileID: 1646381931432144336}
   - component: {fileID: 5757745836096938126}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: meshId2_name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 7941500743327915460}
   - component: {fileID: 2714999043202862099}
   - component: {fileID: 4952524503598564919}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: meshId3_name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,8 @@ GameObject:
   - component: {fileID: 3238157558581020738}
   - component: {fileID: 3238157558581020765}
   - component: {fileID: 6419291489864684621}
-  m_Layer: 0
+  - component: {fileID: 7774857130351277439}
+  m_Layer: 9
   m_Name: Snake
   m_TagString: Snake
   m_Icon: {fileID: 0}
@@ -291,6 +292,8 @@ MonoBehaviour:
   startChaseRange: 10
   maxChaseRange: 40
   chaseSpeed: 8
+  isFrozen: 0
+  freezeTimer: 0
   hissHiss: {fileID: 6419291489864684621}
 --- !u!82 &6419291489864684621
 AudioSource:
@@ -388,6 +391,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &7774857130351277439
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3238157558581020764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.274008, y: 3.4283931, z: 8.549225}
+  m_Center: {x: -0.030589014, y: 2.6573524, z: -4.6378307}
 --- !u!1 &3476747858169228727
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +415,7 @@ GameObject:
   - component: {fileID: 1333455863410372964}
   - component: {fileID: 4224484403821204411}
   - component: {fileID: 1580494766763622800}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: meshId1_name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +493,7 @@ GameObject:
   - component: {fileID: 3102583036992701520}
   - component: {fileID: 8513112379653590435}
   - component: {fileID: 2738642890967452058}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: meshId4_name
   m_TagString: Untagged
   m_Icon: {fileID: 0}

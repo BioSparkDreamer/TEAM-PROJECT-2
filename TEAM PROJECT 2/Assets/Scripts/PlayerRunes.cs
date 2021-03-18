@@ -8,10 +8,14 @@ public class PlayerRunes : MonoBehaviour
 {
     public int runes = 0;
     public AudioSource runeAudio;
+    public GameObject projectilePrefab;
+    public AudioSource musicSource;
+    AudioSource audioSource;
+    public AudioClip barkSound;
 
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -21,6 +25,14 @@ public class PlayerRunes : MonoBehaviour
         if (runes == 3)
         {
             SceneManager.LoadScene(1);
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
+            projectile.GetComponent<Rigidbody>().AddForce(transform.forward * 3000);
+            Destroy(projectile, .5f);
+            PlaySound(barkSound);
+
         }
     }
     public void ChangeRunes()
@@ -32,4 +44,8 @@ public class PlayerRunes : MonoBehaviour
     {
         runeAudio.Play();
     }
+     public void PlaySound(AudioClip clip)
+        {
+            audioSource.PlayOneShot(clip);
+        }
 }

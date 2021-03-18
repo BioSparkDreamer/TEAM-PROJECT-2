@@ -15,6 +15,8 @@ public class SnakeController : MonoBehaviour
     public float maxChaseRange = 40f;
     public float chaseSpeed = 8f;
     private bool chasingPlayer = false;
+    public bool isFrozen = false;
+    public float freezeTimer;
 
 
     private Vector3 startLocation;
@@ -89,6 +91,20 @@ public class SnakeController : MonoBehaviour
         {
             StopHissAudio();
         }
+        if (isFrozen)
+        {
+            snakeRigidBody.constraints = RigidbodyConstraints.FreezePosition;
+        }
+        if (isFrozen == false)
+        {
+            snakeRigidBody.constraints = RigidbodyConstraints.None;
+        }
+        if (isFrozen)
+        {
+        freezeTimer -= Time.deltaTime;
+            if (freezeTimer < 0)
+                isFrozen = false;
+        }
     }
 
     private void StopHissAudio()
@@ -156,5 +172,10 @@ public class SnakeController : MonoBehaviour
 
         Vector3 forwardLocation = currentSnakePosition + transform.forward * speed * Time.deltaTime;
         snakeRigidBody.MovePosition(forwardLocation);
+    }
+        public void Freeze()
+    {
+        isFrozen = true;
+        freezeTimer = 3;
     }
 }

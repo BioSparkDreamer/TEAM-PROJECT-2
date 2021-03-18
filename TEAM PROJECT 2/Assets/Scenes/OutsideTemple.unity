@@ -28941,7 +28941,7 @@ GameObject:
   - component: {fileID: 6584280031302659801}
   - component: {fileID: 2044505433463737400}
   - component: {fileID: 1636401512566533769}
-  - component: {fileID: 1636401512566533770}
+  - component: {fileID: 1636401512566533771}
   m_Layer: 0
   m_Name: Mayan Rune
   m_TagString: Untagged
@@ -28961,20 +28961,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240c0440aaeb51546ac376948d1ef5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &1636401512566533770
-MeshCollider:
+--- !u!65 &1636401512566533771
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636401512566533768}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -5227827710865635497, guid: 117fb921f843f224bbaa214bdab243f8, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.099999994, y: 0.100000024, z: 0.53875715}
+  m_Center: {x: 0, y: 0.0011377692, z: 0.24213761}
 --- !u!1001 &2036438208753565743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29233,6 +29232,22 @@ PrefabInstance:
       propertyPath: runes
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1173827366321474941, guid: edfddf421b4c8d1428141b9235af5bda,
+        type: 3}
+      propertyPath: musicSource
+      value: 
+      objectReference: {fileID: 4659872809159453318}
+    - target: {fileID: -1173827366321474941, guid: edfddf421b4c8d1428141b9235af5bda,
+        type: 3}
+      propertyPath: barkSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f606140c0664f09469593b86250b3f49, type: 3}
+    - target: {fileID: -1173827366321474941, guid: edfddf421b4c8d1428141b9235af5bda,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 3224012345770848453, guid: edf75b519d6fe84469aca3f956e3d3a1,
+        type: 3}
     - target: {fileID: 1190368403256718419, guid: edfddf421b4c8d1428141b9235af5bda,
         type: 3}
       propertyPath: m_Volume
@@ -29381,6 +29396,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!82 &4659872809159453318 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5974971666971269452, guid: edfddf421b4c8d1428141b9235af5bda,
+    type: 3}
+  m_PrefabInstance: {fileID: 4659872809159453313}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4878818985659765458
 PrefabInstance:
   m_ObjectHideFlags: 0
