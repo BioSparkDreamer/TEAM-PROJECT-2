@@ -1104,7 +1104,6 @@ GameObject:
   - component: {fileID: 220431376}
   - component: {fileID: 220431375}
   - component: {fileID: 220431374}
-  - component: {fileID: 220431377}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Pause Menu
@@ -1175,8 +1174,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 220431377}
-        m_MethodName: mainMenu
+      - m_Target: {fileID: 916080944}
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1222,18 +1221,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220431372}
   m_CullTransparentMesh: 0
---- !u!114 &220431377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 220431372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 812c12fc65e43374096599dbd6f7c1a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &235966161
 GameObject:
   m_ObjectHideFlags: 0
@@ -7018,7 +7005,6 @@ GameObject:
   - component: {fileID: 414524918}
   - component: {fileID: 414524917}
   - component: {fileID: 414524916}
-  - component: {fileID: 414524919}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Pause Menu
@@ -7089,8 +7075,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 414524919}
-        m_MethodName: resume
+      - m_Target: {fileID: 916080944}
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7136,18 +7122,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414524914}
   m_CullTransparentMesh: 0
---- !u!114 &414524919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 414524914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 812c12fc65e43374096599dbd6f7c1a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &418502224 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7156441127734712311, guid: 420c8bebc20334949993df3fa2a1e634,
@@ -14676,6 +14650,7 @@ GameObject:
   - component: {fileID: 916080942}
   - component: {fileID: 916080941}
   - component: {fileID: 916080940}
+  - component: {fileID: 916080944}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -14764,6 +14739,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &916080944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916080939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 812c12fc65e43374096599dbd6f7c1a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &917054933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15624,7 +15611,6 @@ GameObject:
   - component: {fileID: 1014274604}
   - component: {fileID: 1014274603}
   - component: {fileID: 1014274602}
-  - component: {fileID: 1014274605}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Pause Menu
@@ -15695,7 +15681,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1014274605}
+      - m_Target: {fileID: 916080944}
         m_MethodName: Reload
         m_Mode: 1
         m_Arguments:
@@ -15742,18 +15728,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014274600}
   m_CullTransparentMesh: 0
---- !u!114 &1014274605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1014274600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 812c12fc65e43374096599dbd6f7c1a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1015920443 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5667409239708088245, guid: 5ca53438fcd486e45b6e09596f171772,
@@ -18462,7 +18436,6 @@ GameObject:
   - component: {fileID: 1348020702}
   - component: {fileID: 1348020701}
   - component: {fileID: 1348020700}
-  - component: {fileID: 1348020703}
   m_Layer: 5
   m_Name: About
   m_TagString: Pause Menu
@@ -18533,8 +18506,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1348020703}
-        m_MethodName: about
+      - m_Target: {fileID: 916080944}
+        m_MethodName: About
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18580,18 +18553,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348020698}
   m_CullTransparentMesh: 0
---- !u!114 &1348020703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348020698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 812c12fc65e43374096599dbd6f7c1a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1348318137 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7156441127734712311, guid: 420c8bebc20334949993df3fa2a1e634,
@@ -28910,6 +28871,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1690520199517702300, guid: 48441a3919ca7664d8af51adad2b6864,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0.14005145
+      objectReference: {fileID: 0}
+    - target: {fileID: 1690520199517702300, guid: 48441a3919ca7664d8af51adad2b6864,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90.070854
+      objectReference: {fileID: 0}
+    - target: {fileID: 1690520199517702300, guid: 48441a3919ca7664d8af51adad2b6864,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 87.41757
+      objectReference: {fileID: 0}
     - target: {fileID: 2641071578194058673, guid: 48441a3919ca7664d8af51adad2b6864,
         type: 3}
       propertyPath: waypoint.Array.size
@@ -28944,6 +28920,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Guide :)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212622710673635299, guid: 48441a3919ca7664d8af51adad2b6864,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.25853378
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212622710673635299, guid: 48441a3919ca7664d8af51adad2b6864,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90.006134
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212622710673635299, guid: 48441a3919ca7664d8af51adad2b6864,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -88.08172
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943395750510964233, guid: 48441a3919ca7664d8af51adad2b6864,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 4.0876117
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48441a3919ca7664d8af51adad2b6864, type: 3}

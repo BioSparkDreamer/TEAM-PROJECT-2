@@ -29,9 +29,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpStrength = 3f;
 
     //..............................................Health Bar Configuration
-    public Image fullHealth;
-    public Image halfHealth;
-   
+    public GameObject fullHealth = GameObject.FindGameObjectWithTag("Full Health");
+    public GameObject halfHealth = GameObject.FindGameObjectWithTag("Half Health");
+
 
     void Update()
     {

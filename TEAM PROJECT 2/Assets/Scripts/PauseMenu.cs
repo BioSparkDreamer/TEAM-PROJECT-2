@@ -13,11 +13,10 @@ public class PauseMenu : MonoBehaviour
 	{
 		Time.timeScale = 1;
 		pauseObjects = GameObject.FindGameObjectsWithTag("Pause Menu");
-		
 		HidePaused();
 	}
 
-	void Update()
+    void FixedUpdate()
 	{
 
 		//......................................Uses the p button to pause and unpause the game
@@ -26,14 +25,14 @@ public class PauseMenu : MonoBehaviour
 			if (Time.timeScale == 1)
 			{
 				Time.timeScale = 0;
-				gameIsPaused = true;
 				ShowPaused();
+				gameIsPaused = true;
 			}
 			else if (Time.timeScale == 0)
 			{
 				Time.timeScale = 1;
-				gameIsPaused = false;
 				HidePaused();
+				gameIsPaused = false;
 			}
 		}
 	}
@@ -49,19 +48,22 @@ public class PauseMenu : MonoBehaviour
     public void About()
     {
 		SceneManager.LoadScene(1);
+		HidePaused();
 	}
 
 	//.......................................... Goes to Main Menu
 	public void MainMenu()
     {
 		SceneManager.LoadScene(0);
+		HidePaused();
 	}
 
 	//..........................................Controls the un-pausing of the scene
 	public void Resume()
     {
 		Time.timeScale = 1;
-    }
+		HidePaused();
+	}
 
 	//..........................................Shows objects with ShowOnPause tag
 	public void ShowPaused()
@@ -69,6 +71,7 @@ public class PauseMenu : MonoBehaviour
 		foreach (GameObject g in pauseObjects)
 		{
 			g.SetActive(true);
+			Cursor.lockState = CursorLockMode.Confined;
 		}
 	}
 
@@ -78,6 +81,7 @@ public class PauseMenu : MonoBehaviour
 		foreach (GameObject g in pauseObjects)
 		{
 			g.SetActive(false);
+			Cursor.lockState = CursorLockMode.Locked;
 		}
 	}
 }
