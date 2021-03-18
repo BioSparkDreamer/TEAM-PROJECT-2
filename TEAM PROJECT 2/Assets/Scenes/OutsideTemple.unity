@@ -13775,6 +13775,11 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 666456280845088791, guid: edfddf421b4c8d1428141b9235af5bda,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f6531a2d29ae240468b43cf49851e565, type: 3}
     - target: {fileID: 3005165670520038718, guid: edfddf421b4c8d1428141b9235af5bda,
         type: 3}
       propertyPath: m_PlayOnAwake
@@ -13915,6 +13920,11 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8964128341335239539, guid: edfddf421b4c8d1428141b9235af5bda,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d900408c01b50f49bbc0adcc15cc719, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edfddf421b4c8d1428141b9235af5bda, type: 3}
 --- !u!4 &4659872809159453314 stripped
