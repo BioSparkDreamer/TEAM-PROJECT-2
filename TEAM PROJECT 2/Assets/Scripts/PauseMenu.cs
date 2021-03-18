@@ -13,7 +13,8 @@ public class PauseMenu : MonoBehaviour
 	{
 		Time.timeScale = 1;
 		pauseObjects = GameObject.FindGameObjectsWithTag("Pause Menu");
-		hidePaused();
+		
+		HidePaused();
 	}
 
 	void Update()
@@ -26,13 +27,13 @@ public class PauseMenu : MonoBehaviour
 			{
 				Time.timeScale = 0;
 				gameIsPaused = true;
-				showPaused();
+				ShowPaused();
 			}
 			else if (Time.timeScale == 0)
 			{
 				Time.timeScale = 1;
 				gameIsPaused = false;
-				hidePaused();
+				HidePaused();
 			}
 		}
 	}
@@ -45,25 +46,25 @@ public class PauseMenu : MonoBehaviour
 	}
 
     //..........................................Goes to About Screen
-    public void about()
+    public void About()
     {
 		SceneManager.LoadScene(1);
 	}
 
 	//.......................................... Goes to Main Menu
-	public void mainMenu()
+	public void MainMenu()
     {
 		SceneManager.LoadScene(0);
 	}
 
 	//..........................................Controls the un-pausing of the scene
-	public void resume()
+	public void Resume()
     {
 		Time.timeScale = 1;
     }
 
 	//..........................................Shows objects with ShowOnPause tag
-	public void showPaused()
+	public void ShowPaused()
 	{
 		foreach (GameObject g in pauseObjects)
 		{
@@ -72,7 +73,7 @@ public class PauseMenu : MonoBehaviour
 	}
 
 	//..........................................Hides objects with ShowOnPause tag
-	public void hidePaused()
+	public void HidePaused()
 	{
 		foreach (GameObject g in pauseObjects)
 		{
