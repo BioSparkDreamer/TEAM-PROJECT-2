@@ -64,12 +64,7 @@ public class GuideMovement : MonoBehaviour
                     startMovement = false;
                 }
             }
-            anim.SetInteger("State", 1);
             MoveToWaypoint();
-        }
-        else
-        {
-            anim.SetInteger("State", 0);
         }
     }
 
