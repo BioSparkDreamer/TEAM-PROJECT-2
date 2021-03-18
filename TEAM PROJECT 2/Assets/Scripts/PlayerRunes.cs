@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerRunes : MonoBehaviour
 {
     public int runes = 0;
+    public AudioSource runeAudio;
 
     void Start()
     {
@@ -25,4 +27,9 @@ public class PlayerRunes : MonoBehaviour
         {
 	        runes++; 
         }
+
+    internal void PlayAudioForRunes()
+    {
+            runeAudio.Play();     
+    }
 }

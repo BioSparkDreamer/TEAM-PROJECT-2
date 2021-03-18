@@ -882,18 +882,17 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1226441623}
-  - component: {fileID: 1226441625}
-  - component: {fileID: 1226441624}
-  m_Layer: 5
-  m_Name: About Text
+  - component: {fileID: 1676108210}
+  - component: {fileID: 1676108209}
+  m_Layer: 0
+  m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1226441623
-RectTransform:
+--- !u!82 &1676108209
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
