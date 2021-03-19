@@ -24175,7 +24175,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454711930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -676.5, y: 317, z: 0}
+  m_LocalPosition: {x: -648, y: 376, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1125323647}
@@ -29378,6 +29378,16 @@ PrefabInstance:
       propertyPath: groundMask.m_Bits
       value: 256
       objectReference: {fileID: 0}
+    - target: {fileID: 4659872809399133588, guid: edfddf421b4c8d1428141b9235af5bda,
+        type: 3}
+      propertyPath: fullHealth
+      value: 
+      objectReference: {fileID: 842163361}
+    - target: {fileID: 4659872809399133588, guid: edfddf421b4c8d1428141b9235af5bda,
+        type: 3}
+      propertyPath: halfHealth
+      value: 
+      objectReference: {fileID: 1744992815}
     - target: {fileID: 4659872809399133589, guid: edfddf421b4c8d1428141b9235af5bda,
         type: 3}
       propertyPath: m_Name

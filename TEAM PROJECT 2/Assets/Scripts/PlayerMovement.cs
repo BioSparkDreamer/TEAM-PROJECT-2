@@ -29,8 +29,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpStrength = 3f;
 
     //..............................................Health Bar Configuration
-    public Image fullHealth;
-    public Image halfHealth;
+    public Object fullHealth;
+    public Object halfHealth;
 
     public AudioSource barkAudio;
     public AudioSource jumpAudio;
