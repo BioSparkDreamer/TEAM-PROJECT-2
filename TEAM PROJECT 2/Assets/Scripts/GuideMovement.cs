@@ -93,12 +93,14 @@ public class GuideMovement : MonoBehaviour
         //Pause movement if there is a wait time
         if (waitTime > 0f)
         {
+            anim.SetInteger("State", 0);
             waitTime = waitTime - Time.deltaTime;
             return;
         }
         else
         {
             //Move toward waypoint
+            anim.SetInteger("State", 1);
             transform.position = Vector3.MoveTowards(transform.position, waypoint[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
         }
     }
