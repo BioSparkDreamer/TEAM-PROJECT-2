@@ -9,6 +9,7 @@ public class SetCursorStateOnStart : MonoBehaviour
 
 	public void Start()
 	{
+		Cursor.visible = true;
 		Cursor.lockState = _cursorModeOnStart;
 	}
 }
