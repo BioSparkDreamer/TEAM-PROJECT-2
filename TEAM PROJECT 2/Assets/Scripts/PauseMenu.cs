@@ -83,6 +83,7 @@ public class PauseMenu : MonoBehaviour
 		{
 			g.SetActive(true);
 			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
 		}
 	}
 
@@ -93,6 +94,7 @@ public class PauseMenu : MonoBehaviour
 		{
 			g.SetActive(false);
 			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
 		}
 	}
 }

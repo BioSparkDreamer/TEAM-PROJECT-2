@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     int count = 0;
 
+    private bool guideMoveThreeRune = false;
+
     //..............................................Movement 
     public float moveSpeed = 10f;
 
@@ -86,6 +88,12 @@ public class PlayerMovement : MonoBehaviour
         //because that's just how physics works man
         fallVelocity.y = fallVelocity.y + gravity * Time.deltaTime;
         controller.Move(fallVelocity * Time.deltaTime);
+
+        if (guideMoveThreeRune == false && GuideMovement.startMovement == false && PlayerRunes.runes == 3)
+        {
+            guideMoveThreeRune = true;
+            GuideMovement.startMovement = true;
+        }
     }
 
     //..............................................Snake Damage

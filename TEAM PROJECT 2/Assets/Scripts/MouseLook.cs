@@ -13,6 +13,7 @@ public class MouseLook : MonoBehaviour
     {
         //..............................................Lock player cursor
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
 

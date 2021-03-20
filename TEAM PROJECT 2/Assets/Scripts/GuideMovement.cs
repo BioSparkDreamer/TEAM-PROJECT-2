@@ -23,7 +23,7 @@ public class GuideMovement : MonoBehaviour
 
     //.............................................Movement Variables
     public float defaultMoveSpeed = 5f;
-    public bool startMovement = false;
+    static public bool startMovement = true;
 
     //.............................................Animation
     Animator anim;
@@ -39,6 +39,8 @@ public class GuideMovement : MonoBehaviour
         CheckWaypoint();
 
         anim = GetComponent<Animator>();
+
+
 
     }
 
