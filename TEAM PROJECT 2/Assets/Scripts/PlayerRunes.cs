@@ -2,11 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerRunes : MonoBehaviour
 {
-    public int runes = 0;
+    static public int runes;
     public AudioSource runeAudio;
     public GameObject projectilePrefab;
     public AudioSource musicSource;
@@ -15,17 +14,14 @@ public class PlayerRunes : MonoBehaviour
 
     void Start()
     {
+        runes = 0;
+
         audioSource = GetComponent<AudioSource>();
     }
 
 
     void Update()
     {
-        //..............................................Conditional to get into temple
-        if (runes == 3)
-        {
-            SceneManager.LoadScene(1);
-        }
         if (Input.GetKeyDown(KeyCode.B))
         {
             GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
@@ -35,17 +31,19 @@ public class PlayerRunes : MonoBehaviour
 
         }
     }
+
     public void ChangeRunes()
     {
-        runes++;
+        runes += 1;
     }
 
     internal void PlayAudioForRunes()
     {
         runeAudio.Play();
     }
-     public void PlaySound(AudioClip clip)
-        {
-            audioSource.PlayOneShot(clip);
-        }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
+    }
 }

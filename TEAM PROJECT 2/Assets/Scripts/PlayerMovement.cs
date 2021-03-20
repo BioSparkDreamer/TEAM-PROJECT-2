@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 // =================NOTE=====================
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     int count = 0;
 
+    //..............................................Movement 
     public float moveSpeed = 10f;
 
     public float gravity = -9.81f;
@@ -32,9 +34,16 @@ public class PlayerMovement : MonoBehaviour
     public Object fullHealth;
     public Object halfHealth;
 
+    //..............................................Audio
     public AudioSource barkAudio;
     public AudioSource jumpAudio;
     public AudioSource walkAudio;
+
+    void Start()
+    {
+       fullHealth = GameObject.FindGameObjectWithTag("Full Health");
+       halfHealth = GameObject.FindGameObjectWithTag("Half Health");
+    }
 
     void Update()
     {
@@ -70,23 +79,39 @@ public class PlayerMovement : MonoBehaviour
         //because that's just how physics works man
         fallVelocity.y = fallVelocity.y + gravity * Time.deltaTime;
         controller.Move(fallVelocity * Time.deltaTime);
-
     }
 
     //..............................................Snake Damage
-    private void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision other)
     {
-        
-        if(other.gameObject.CompareTag("Snake"))
+
+        //..........................................Snake dmg
+        if (other.gameObject.tag == "Snake")
         {
             Destroy(fullHealth);
 
-            if(count == 1)
+            if (count == 1)
             {
                 Destroy(halfHealth);
             }
-            
-            count = 1;
+
+            if (count == 2)
+            {
+                SceneManager.LoadScene(4);
+            }
+
+            count += 1;
+        }
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        //..........................................Conditional for getting inside Temple
+        if(other.gameObject.tag == "Entrance")
+        {
+            if (PlayerRunes.runes == 3)
+            {
+                SceneManager.LoadScene(2);
+            }
         }
     }
     void FootstepAudioCheck(float x, float z)
