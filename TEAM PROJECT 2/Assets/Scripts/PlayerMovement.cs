@@ -4,6 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//Scene numbers
+//Main Menu 0
+//About 1
+//Inside Temple 2
+//Outside Temple 3
+//Game Over 4
+//Win 5
 
 // =================NOTE=====================
 // The ground checker only looks at objects tagged
@@ -112,6 +119,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 SceneManager.LoadScene(2);
             }
+        }
+
+        else if(other.gameObject.tag == "Well")
+        {
+            SceneManager.LoadScene(5);
         }
     }
     void FootstepAudioCheck(float x, float z)

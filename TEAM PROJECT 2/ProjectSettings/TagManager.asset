@@ -13,6 +13,7 @@ TagManager:
   - Half Health
   - Pause Menu
   - Entrance
+  - Well
   layers:
   - Default
   - TransparentFX
