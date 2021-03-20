@@ -16,6 +16,13 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     int count = 0;
 
+<<<<<<< Updated upstream
+=======
+    //moves the guide at 3 runes
+    private bool guideRuneThree;
+
+    //..............................................Movement 
+>>>>>>> Stashed changes
     public float moveSpeed = 10f;
 
     public float gravity = -9.81f;
@@ -29,9 +36,28 @@ public class PlayerMovement : MonoBehaviour
     public float jumpStrength = 3f;
 
     //..............................................Health Bar Configuration
+<<<<<<< Updated upstream
     public Image fullHealth;
     public Image halfHealth;
    
+=======
+    public Object fullHealth;
+    public Object halfHealth;
+
+    //..............................................Audio
+    public AudioSource barkAudio;
+    public AudioSource jumpAudio;
+    public AudioSource walkAudio;
+
+    void Start()
+    {
+       fullHealth = GameObject.FindGameObjectWithTag("Full Health");
+       halfHealth = GameObject.FindGameObjectWithTag("Half Health");
+
+        //Starts the playerguide moving
+        GuideMovement.startMovement = true;
+    }
+>>>>>>> Stashed changes
 
     void Update()
     {
@@ -65,6 +91,16 @@ public class PlayerMovement : MonoBehaviour
         fallVelocity.y = fallVelocity.y + gravity * Time.deltaTime;
         controller.Move(fallVelocity * Time.deltaTime);
 
+<<<<<<< Updated upstream
+=======
+        //..............................................Move guide
+        //This will cause teh guide to run his route once more when the player collects 3 runes
+        if(PlayerRunes.runes == 3 && guideRuneThree == false)
+        {
+            GuideMovement.startMovement = true;
+            guideRuneThree = true;
+        }
+>>>>>>> Stashed changes
     }
 
     //..............................................Snake Damage

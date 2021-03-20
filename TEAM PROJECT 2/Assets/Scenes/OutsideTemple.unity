@@ -12266,7 +12266,11 @@ PrefabInstance:
     - target: {fileID: 3008783069484188769, guid: 4b4f53012bbbef3439eaaa231f0fa2e0,
         type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< Updated upstream
       value: 46.466824
+=======
+      value: 140.1
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3008783069484188769, guid: 4b4f53012bbbef3439eaaa231f0fa2e0,
         type: 3}
@@ -12276,7 +12280,11 @@ PrefabInstance:
     - target: {fileID: 3008783069484188769, guid: 4b4f53012bbbef3439eaaa231f0fa2e0,
         type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< Updated upstream
       value: 6.0408707
+=======
+      value: 133.5
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3008783069484188769, guid: 4b4f53012bbbef3439eaaa231f0fa2e0,
         type: 3}
@@ -13654,7 +13662,11 @@ PrefabInstance:
     - target: {fileID: 3008783069484188769, guid: 4b4f53012bbbef3439eaaa231f0fa2e0,
         type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< Updated upstream
       value: -93.90465
+=======
+      value: -13.36
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3008783069484188769, guid: 4b4f53012bbbef3439eaaa231f0fa2e0,
         type: 3}
@@ -14825,7 +14837,11 @@ PrefabInstance:
     - target: {fileID: 3008783069484188769, guid: 4b4f53012bbbef3439eaaa231f0fa2e0,
         type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< Updated upstream
       value: 49.871105
+=======
+      value: 115.71
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3008783069484188769, guid: 4b4f53012bbbef3439eaaa231f0fa2e0,
         type: 3}
@@ -15138,7 +15154,11 @@ PrefabInstance:
     - target: {fileID: 3008783069484188769, guid: 4b4f53012bbbef3439eaaa231f0fa2e0,
         type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< Updated upstream
       value: -125.90022
+=======
+      value: 20
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3008783069484188769, guid: 4b4f53012bbbef3439eaaa231f0fa2e0,
         type: 3}
@@ -16074,7 +16094,11 @@ PrefabInstance:
     - target: {fileID: 3008783069484188769, guid: 4b4f53012bbbef3439eaaa231f0fa2e0,
         type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< Updated upstream
       value: -70.100975
+=======
+      value: 12.18
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3008783069484188769, guid: 4b4f53012bbbef3439eaaa231f0fa2e0,
         type: 3}
@@ -29101,7 +29125,11 @@ PrefabInstance:
     - target: {fileID: 3008783069484188769, guid: 4b4f53012bbbef3439eaaa231f0fa2e0,
         type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< Updated upstream
       value: -43.9
+=======
+      value: 23.4
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3008783069484188769, guid: 4b4f53012bbbef3439eaaa231f0fa2e0,
         type: 3}
@@ -29111,7 +29139,11 @@ PrefabInstance:
     - target: {fileID: 3008783069484188769, guid: 4b4f53012bbbef3439eaaa231f0fa2e0,
         type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< Updated upstream
       value: -89.8
+=======
+      value: 61.3
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3008783069484188769, guid: 4b4f53012bbbef3439eaaa231f0fa2e0,
         type: 3}
@@ -29331,6 +29363,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< Updated upstream
     - target: {fileID: -1173827366321474941, guid: edfddf421b4c8d1428141b9235af5bda,
         type: 3}
       propertyPath: runes
@@ -29361,15 +29394,22 @@ PrefabInstance:
       propertyPath: groundMask.m_Bits
       value: 256
       objectReference: {fileID: 0}
+=======
+    - target: {fileID: 4659872809399133588, guid: edfddf421b4c8d1428141b9235af5bda,
+        type: 3}
+      propertyPath: fullHealth
+      value: 
+      objectReference: {fileID: 842163361}
+    - target: {fileID: 4659872809399133588, guid: edfddf421b4c8d1428141b9235af5bda,
+        type: 3}
+      propertyPath: halfHealth
+      value: 
+      objectReference: {fileID: 1744992815}
+>>>>>>> Stashed changes
     - target: {fileID: 4659872809399133589, guid: edfddf421b4c8d1428141b9235af5bda,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659872809399133589, guid: edfddf421b4c8d1428141b9235af5bda,
-        type: 3}
-      propertyPath: m_TagString
-      value: PlayerRunes
       objectReference: {fileID: 0}
     - target: {fileID: 4659872809399133590, guid: edfddf421b4c8d1428141b9235af5bda,
         type: 3}
@@ -29426,6 +29466,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4659872810109913076, guid: edfddf421b4c8d1428141b9235af5bda,
         type: 3}
       propertyPath: mouseSensitivity
@@ -29495,6 +29536,10 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+=======
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: edfddf421b4c8d1428141b9235af5bda, type: 3}
+>>>>>>> Stashed changes
 --- !u!4 &4982485174682559407
 Transform:
   m_ObjectHideFlags: 0

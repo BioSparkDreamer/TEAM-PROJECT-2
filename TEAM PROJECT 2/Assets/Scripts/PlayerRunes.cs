@@ -9,7 +9,15 @@ public class PlayerRunes : MonoBehaviour
 
     void Start()
     {
+<<<<<<< Updated upstream
         
+=======
+        runes = 0;
+
+        audioSource = GetComponent<AudioSource>();
+
+
+>>>>>>> Stashed changes
     }
 
 

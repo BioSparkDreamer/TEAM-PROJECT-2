@@ -69,6 +69,11 @@ public class PauseMenu : MonoBehaviour
 		foreach (GameObject g in pauseObjects)
 		{
 			g.SetActive(true);
+<<<<<<< Updated upstream
+=======
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
+>>>>>>> Stashed changes
 		}
 	}
 
@@ -78,6 +83,11 @@ public class PauseMenu : MonoBehaviour
 		foreach (GameObject g in pauseObjects)
 		{
 			g.SetActive(false);
+<<<<<<< Updated upstream
+=======
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
+>>>>>>> Stashed changes
 		}
 	}
 }

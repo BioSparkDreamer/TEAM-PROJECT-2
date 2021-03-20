@@ -23,7 +23,7 @@ public class GuideMovement : MonoBehaviour
 
     //.............................................Movement Variables
     public float defaultMoveSpeed = 5f;
-    public bool startMovement = false;
+    static public bool startMovement = false;
 
     //.............................................Animation
     Animator anim;
