@@ -71,7 +71,7 @@ public class PauseMenu : MonoBehaviour
 		foreach (GameObject g in pauseObjects)
 		{
 			g.SetActive(true);
-			Cursor.lockState = CursorLockMode.Confined;
+			Cursor.lockState = CursorLockMode.None;
 		}
 	}
 

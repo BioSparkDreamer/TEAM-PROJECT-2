@@ -18859,7 +18859,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259164, y: 204.7}
+  m_AnchoredPosition: {x: 16, y: 204.7}
   m_SizeDelta: {x: 289.9, y: 87.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1351367189
@@ -18893,7 +18893,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pause
+  m_Text: Paused
 --- !u!222 &1351367190
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24630,7 +24630,7 @@ GameObject:
   - component: {fileID: 1539532062}
   m_Layer: 5
   m_Name: BG
-  m_TagString: Untagged
+  m_TagString: Pause Menu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24876,7 +24876,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1553776949}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -151, z: 0}
+  m_LocalPosition: {x: 0, y: -152, z: 0}
   m_LocalScale: {x: 1.8181818, y: 1.8181818, z: 1.8181818}
   m_Children:
   - {fileID: 1539532061}
