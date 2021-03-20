@@ -82,6 +82,11 @@ public class PlayerMovement : MonoBehaviour
             fallVelocity.y = Mathf.Sqrt(jumpStrength * -2f * gravity);
             jumpAudio.Play();
         }
+        
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
 
         //..............................................Player fall velocity
         //Note: multiplied by Time.deltaTime twice 
