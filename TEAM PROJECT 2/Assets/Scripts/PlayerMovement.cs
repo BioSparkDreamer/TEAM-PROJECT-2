@@ -48,8 +48,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-       fullHealth = GameObject.FindGameObjectWithTag("Full Health");
-       halfHealth = GameObject.FindGameObjectWithTag("Half Health");
+        fullHealth = GameObject.FindGameObjectWithTag("Full Health");
+        halfHealth = GameObject.FindGameObjectWithTag("Half Health");
     }
 
     void Update()

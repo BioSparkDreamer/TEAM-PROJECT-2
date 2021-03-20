@@ -44,6 +44,7 @@ public class GuideMovement : MonoBehaviour
 
     void Update()
     {
+        
         //.............................................Turn on movement
         if (startMovement == true)
         {
@@ -64,7 +65,9 @@ public class GuideMovement : MonoBehaviour
                     startMovement = false;
                 }
             }
+            
             MoveToWaypoint();
+            
         }
     }
 

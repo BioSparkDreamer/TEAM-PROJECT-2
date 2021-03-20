@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -9,11 +10,17 @@ public class PauseMenu : MonoBehaviour
 
 	public static bool gameIsPaused;
 
+	public Text fadeText;
+
 	void Start()
 	{
 		Time.timeScale = 1;
 		pauseObjects = GameObject.FindGameObjectsWithTag("Pause Menu");
 		HidePaused();
+
+		//.....................................Fade text out
+		fadeText.canvasRenderer.SetAlpha(1f);
+		FadeOut();
 	}
 
 	void FixedUpdate()
@@ -37,6 +44,10 @@ public class PauseMenu : MonoBehaviour
 		}
 	}
 
+	public void FadeOut()
+    {
+		fadeText.CrossFadeAlpha(0, 5, false);
+    }
 
 	//..........................................Reloads the Level
 	public void Reload()
