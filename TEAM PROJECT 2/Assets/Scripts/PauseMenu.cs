@@ -23,7 +23,7 @@ public class PauseMenu : MonoBehaviour
 		FadeOut();
 	}
 
-	void FixedUpdate()
+	void Update()
 	{
 
 		//......................................Uses the p button to pause and unpause the game
@@ -35,6 +35,7 @@ public class PauseMenu : MonoBehaviour
 				ShowPaused();
 				gameIsPaused = true;
 			}
+			
 			else if (Time.timeScale == 0)
 			{
 				Time.timeScale = 1;
